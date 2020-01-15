@@ -15,3 +15,6 @@ pipeline {
       steps {
         sh 'rake'
       }   
+    }
+  }
+}
