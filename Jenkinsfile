@@ -1,20 +1,20 @@
-pipeline {
-  agent { docker { image 'ruby:2.6.5' } }
-  stages {
-    stage('requirements') {
-      steps {
-        sh 'gem install bundler -v 2.0.1'
-      }
+pipeline{
+    agent {
+        docker {
+            docker login --username=22982977893
+            image "ruby"
+        }
     }
-    stage('build') {
-      steps {
-        sh 'bundle install'
-      }
+    stages{
+        stage("Build"){
+            steps{
+                sh "bundle install"
+            }
+        }
+        stage("Tests"){
+            steps{
+                sh "echo 'simulando um teste automatizado'"
+            }
+        }
     }
-    stage('test') {
-      steps {
-        sh 'rake'
-      }   
-    }
-  }
 }
