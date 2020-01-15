@@ -1,7 +1,7 @@
 pipeline{
     agent {
         docker {
-            docker login --username=22982977893
+            login --username="22982977893"
             image "ruby"
         }
     }
